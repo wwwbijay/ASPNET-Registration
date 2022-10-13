@@ -1,0 +1,68 @@
+﻿@model EventRegistration.Models.Checkout
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<header class="mb-5">
+    <h1>Checkout</h1>    
+</header>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Checkout">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ApplicantId" value="@ViewBag.applicant_Id" />
+            <input type="hidden" asp-for="OrderId" value="@ViewBag.applicant_orderId" />
+            <div class="form-group mb-3">
+                <label asp-for="pType" class="control-label">Performance Type</label>
+                <select asp-for="pType" class="form-control">
+                    <option value="">Choose...</option>
+                    <option value="solo">Solo</option>
+                    <option value="duo">Duo</option>
+                    <option value="trio">Trio</option>
+                    <option value="group">Group</option>
+                </select>
+                <span asp-validation-for="pType" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+               
+                Rs. <input readonly asp-for="Price" value="0" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pay Now" class="btn btn-primary btn-mypay" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        console.log(22);
+        $('#pType').on("change", function () {
+            console.log(1);
+            let ptype = $("#pType").val();
+            console.log(ptype);
+
+            let price = 0;
+
+            if (ptype == 'solo') {
+                $('#Price').val(500);
+            } else if (ptype == 'duo') {
+                $('#Price').val(1000);
+            } else if (ptype == 'trio') {
+                $('#Price').val(1500);
+            } else if (ptype == 'group') {
+                $('#Price').val(2000);
+            } else {
+                price = 0;
+            }
+        });
+
+    });
+
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

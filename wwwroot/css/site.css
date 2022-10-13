@@ -1,0 +1,85 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+body {
+    background: url(../images/gradient-bg.png) fixed center no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: lighter;
+    color: #777;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2, h3, h4, h5 {
+    font-weight: normal;
+    color: #222;
+}
+.hideForm.hideForm {
+    display: none;
+}
+.form-check-label {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    position: relative;
+    top: 5px;
+}
+
+.card {
+    box-shadow: 0 0 31px rgba(0,0,0,0.3);
+    margin: 40px;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.content-entry {
+    padding: 40px 40px 40px 14px;
+}
+
+header {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.payment-logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 120px;
+    margin-top: -21px;
+}
+
+.btn.btn-mypay {
+    background-color: #e45415;
+    border-color: #e45415;
+}
+
+    .btn.btn-mypay:disabled {
+        background-color: #e99977;
+        border-color: #e45415;
+    }
