@@ -102,23 +102,23 @@ namespace EventRegistration.Controllers
             if (ModelState.IsValid)
             {
                 //API request MyPay
-                var ApiURL = "https://testapi.mypay.com.np/api/use-mypay-payments";
-                var API_KEY = "ddOInxZbDO3OkH3fS9n7IIxywU94U1vPU25GeihGNaJN/gT6sBw4zXcknEFVRi0R";
+                var API_URL = "https://smartdigitalnepal.com/api/use-mypay-payments";
+                var API_KEY = "96l+2BvKs653RRnlDe3TciofnL1CAF2ZpJDP6sTxyTlEXpZnFnddNOzpze94FlIp";
 
                  var testBody2 = JsonContent.Create(new
                  {
                      Amount = checkout.Price,
                      OrderId = Convert.ToString(checkout.OrderId),
-                     UserName = "testmerchant",
-                     Password = "Tmerchant@123",
-                     MerchantId = "MER29403933"
+                     UserName = "dgdance",
+                     Password = "Dgdance@1.,",
+                     MerchantId = "MER60786175"
                  });
 
                 var client = _clientFactory.CreateClient();
 
                 client.DefaultRequestHeaders.Add("API_KEY", API_KEY);
 
-                using var httpResponseMessage = await client.PostAsync(ApiURL, testBody2);
+                using var httpResponseMessage = await client.PostAsync(API_URL, testBody2);
 
                 var responseString = await httpResponseMessage.Content.ReadAsStringAsync();
                 
