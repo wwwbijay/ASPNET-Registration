@@ -1,4 +1,5 @@
 using EventRegistration.Data;
+using EventRegistration.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,8 @@ namespace EventRegistration
         {
             //DbContext configuration
             services.AddDbContext<AppDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            services.Configure<MyPaySettings>(Configuration.GetSection("MyPaySettings"));
 
             services.AddHttpClient();
 

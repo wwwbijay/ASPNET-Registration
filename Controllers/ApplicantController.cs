@@ -14,6 +14,7 @@ using System.Net.Http.Json;
 using System.Text;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
 
 namespace EventRegistration.Controllers
 {
@@ -21,11 +22,17 @@ namespace EventRegistration.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IHttpClientFactory _clientFactory;
+        private readonly MyPaySettings _mySettings;
 
-        public ApplicantController(AppDbContext context, IHttpClientFactory clientFactory)
+        public ApplicantController(
+            AppDbContext context, 
+            IHttpClientFactory clientFactory,
+            IOptions<MyPaySettings> settings
+            )
         {
             _context = context;
             _clientFactory = clientFactory;
+            _mySettings = settings.Value;
         }
 
         // GET: Applicants
@@ -102,16 +109,16 @@ namespace EventRegistration.Controllers
             if (ModelState.IsValid)
             {
                 //API request MyPay
-                var API_URL = "https://smartdigitalnepal.com/api/use-mypay-payments";
-                var API_KEY = "96l+2BvKs653RRnlDe3TciofnL1CAF2ZpJDP6sTxyTlEXpZnFnddNOzpze94FlIp";
+                var API_URL = _mySettings.BASE_URL + "/api/use-mypay-payments";
+                var API_KEY = _mySettings.API_KEY;
 
                  var testBody2 = JsonContent.Create(new
                  {
                      Amount = checkout.Price,
                      OrderId = Convert.ToString(checkout.OrderId),
-                     UserName = "dgdance",
-                     Password = "Dgdance@1.,",
-                     MerchantId = "MER60786175"
+                     UserName = _mySettings.UserName,
+                     Password = _mySettings.Password,
+                     MerchantId = _mySettings.MerchantId
                  });
 
                 var client = _clientFactory.CreateClient();
@@ -139,13 +146,15 @@ namespace EventRegistration.Controllers
                         await _context.SaveChangesAsync();
                         return Redirect(redirectUrl);
                     }
-
-
+                   
                 }
-                else { }
+                else {
+                    return View(checkout);
+                }
                 
-                return RedirectToAction(nameof(Index));
+               
             }
+
             return View(checkout);
 
         }

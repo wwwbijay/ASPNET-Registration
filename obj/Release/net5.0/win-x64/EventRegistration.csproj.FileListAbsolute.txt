@@ -467,13 +467,7 @@ D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\EventRegistration.TagHelper
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\EventRegistration.TagHelpers.output.cache
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\EventRegistration.RazorCoreGenerate.cache
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Checkout.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Create.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Delete.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Details.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Edit.cshtml.g.cs
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Index.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Home\Index.cshtml.g.cs
-D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Shared\Error.cshtml.g.cs
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -510,3 +504,5 @@ D:\.Net\EventRegistration\bin\Release\net5.0\win-x64\fr\Npgsql.resources.dll
 D:\.Net\EventRegistration\bin\Release\net5.0\win-x64\ja\Npgsql.resources.dll
 D:\.Net\EventRegistration\bin\Release\net5.0\win-x64\zh-CN\Npgsql.resources.dll
 D:\.Net\EventRegistration\bin\Release\net5.0\win-x64\sni.dll
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Failed.cshtml.g.cs
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\Razor\Views\Applicant\Success.cshtml.g.cs

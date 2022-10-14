@@ -3,8 +3,12 @@ D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\site
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\favicon.ico
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\bg-heading-02.jpg
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\dancer-2349565_1280.png
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\gradient-bg-1.png
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\gradient-bg.jpg
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\gradient-bg.png
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\mypay-logo.png
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\rupani-dance-desktop.jpg
+D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\images\rupani-dance-mobile.jpg
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\js\site.js
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 D:\.Net\EventRegistration\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
