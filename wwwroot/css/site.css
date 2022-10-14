@@ -1,8 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-
-
 /* Provide sufficient contrast against white background */
 a {
     color: #0366d6;
@@ -15,7 +13,7 @@ a {
 }
 
 body {
-    background: url(../images/gradient-bg.png) fixed center no-repeat;
+    background: url(../images/gradient-bg.jpg) fixed center no-repeat;
     background-size: 100% 100%;
     font-family: 'Inter Tight', sans-serif;
     font-weight: lighter;
@@ -34,9 +32,11 @@ h2, h3, h4, h5 {
     font-weight: normal;
     color: #222;
 }
+
 .hideForm.hideForm {
     display: none;
 }
+
 .form-check-label {
     cursor: pointer;
 }
@@ -46,7 +46,7 @@ h2, h3, h4, h5 {
     top: 5px;
 }
 
-.card {
+.content-card {
     box-shadow: 0 0 31px rgba(0,0,0,0.3);
     margin: 40px;
 }
@@ -64,7 +64,9 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-
+span.text-danger {
+    font-size: 14px;
+}
 
 .payment-logo {
     position: absolute;
@@ -79,7 +81,25 @@ header {
     border-color: #e45415;
 }
 
-    .btn.btn-mypay:disabled {
-        background-color: #e99977;
-        border-color: #e45415;
+.btn.btn-mypay:disabled {
+    background-color: #e99977;
+    border-color: #e45415;
+}
+
+.footer{
+    color: #333;
+}
+
+@media only screen and (max-width: 950px) {
+    .content-card {
+        margin: 40px 0;
+        padding: 10px 40px;
     }
+    .content-image{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+   
+}

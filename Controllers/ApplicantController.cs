@@ -150,85 +150,16 @@ namespace EventRegistration.Controllers
 
         }
 
-        // GET: Applicants/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Success()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var applicant = await _context.Applicants.FindAsync(id);
-            if (applicant == null)
-            {
-                return NotFound();
-            }
-            return View(applicant);
+            return View();
         }
 
-        // POST: Applicants/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Phone,Email,Address,City,Province,PerformanceType,ParticipantName,Gender,Age,GroupName,NoOfMembers,AgeGroupRange,GroupType,Details")] Applicant applicant)
+        public IActionResult Failed()
         {
-            if (id != applicant.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(applicant);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ApplicantExists(applicant.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(applicant);
+            return View();
         }
-
-        // GET: Applicants/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var applicant = await _context.Applicants
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (applicant == null)
-            {
-                return NotFound();
-            }
-
-            return View(applicant);
-        }
-
-        // POST: Applicants/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var applicant = await _context.Applicants.FindAsync(id);
-            _context.Applicants.Remove(applicant);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+     
 
         private bool ApplicantExists(int id)
         {
