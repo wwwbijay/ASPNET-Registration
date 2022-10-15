@@ -32,7 +32,22 @@ h2, h3, h4, h5 {
     font-weight: normal;
     color: #222;
 }
+table{
+    font-size: 14px;
+    border: 1px solid #eee;
+}
 
+.form-signin {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    border: none;
+}
+
+.form-signin-header img {
+    width: 200px;
+}
 .hideForm.hideForm {
     display: none;
 }
@@ -40,7 +55,11 @@ h2, h3, h4, h5 {
 .form-check-label {
     cursor: pointer;
 }
-
+.btn-logout{
+    position: absolute;
+    right: 20px;
+    top: 20px; 
+}
 .material-symbols-outlined {
     position: relative;
     top: 5px;

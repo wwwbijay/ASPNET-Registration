@@ -26,5 +26,12 @@ $(document).ready(function () {
             group.removeClass(hideClass);
         }
     });
+
+    $("#check_payment_status").click(function () {
+        $.ajax({
+            type: "GET",
+            url: "Account/CheckPaymentStatus",
+        });
+    });
     
 });

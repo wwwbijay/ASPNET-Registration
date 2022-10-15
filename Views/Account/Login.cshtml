@@ -1,0 +1,34 @@
+﻿@model Credential
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<main class="form-signin card">
+    <form asp-controller="Account" asp-action="Login" method="post">
+        <div class="form-signin-header text-right">
+            <img class="mb-4" src="https://mypay.com.np/frontend/images/logo.png" alt="">
+        </div>
+
+        <h1 class="mb-3 fw-normal">Sign In</h1>
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-floating">
+            <label asp-for="UserName">Email address</label>
+            <input asp-for="UserName" class="form-control" placeholder="name@example.com">
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-floating">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" class="form-control" placeholder="Password">
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+    </form>
+</main>

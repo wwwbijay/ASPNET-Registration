@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EventRegistration.Data;
 using EventRegistration.Models;
-using System.Reflection.Metadata;
-using RestSharp;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
-using Microsoft.Net.Http.Headers;
+
 using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
 

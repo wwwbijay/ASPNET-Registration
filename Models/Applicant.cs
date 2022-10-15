@@ -1,10 +1,11 @@
-﻿using EventRegistration.Data.Enums;
+﻿using EventRegistration.Data.Base;
+using EventRegistration.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EventRegistration.Models
 {
-    public class Applicant
+    public class Applicant : IEntityBase
     { 
         [Key]
         public int Id { get; set; }

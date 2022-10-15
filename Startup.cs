@@ -1,4 +1,5 @@
 using EventRegistration.Data;
+using EventRegistration.Data.Services;
 using EventRegistration.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,8 +27,18 @@ namespace EventRegistration
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication("WpCookieMP").AddCookie("WpCookieMP", options =>
+            {
+                options.Cookie.Name = "WpCookieMP";
+                options.LoginPath = "/Account/Login";
+            });
             //DbContext configuration
-            services.AddDbContext<AppDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnectionString")));
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
+            });
+
+            services.AddScoped<IApplicantService, ApplicantService>();
 
             services.Configure<MyPaySettings>(Configuration.GetSection("MyPaySettings"));
 
@@ -53,6 +64,8 @@ namespace EventRegistration
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
