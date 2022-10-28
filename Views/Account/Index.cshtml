@@ -3,7 +3,7 @@
     int index = 0;
 }
 
-<a class="btn btn-light btn-sm" asp-action="Logout">Logout</a>
+<a class="btn btn-info btn-sm float-right" asp-action="Logout">Logout</a>
 <h1>Dashboard</h1>
 <p>
     Welcome to admin dashboard.
@@ -21,23 +21,23 @@
     @foreach (var item in Model)
         {
             <tr>
-                <td>@index++ </td>
+                <td>@{index++;} </td>
                 <td>@item.FullName</td>
         <td>@item.Phone</td>
         <td>@item.Email</td>
         <td>@item.PerformanceType</td>
         <td>
             <a 
-                asp-action="CheckPaymentStatus" 
-                asp-route-id="@item.TransactionId"
+                asp-action="CheckPaymentStatus"
+                   asp-route-id="28102022084126412674480913388"
                 id="check_payment_status"
-                class="btn btn-primary" 
-                data-toggle="modal" 
+                   class="btn btn-primary btn-sm"
+                   data-toggle="modal" 
                 data-target="#paymentStatusModal">
                         <span class="material-symbols-outlined">
                             credit_score
                         </span>
-                Status
+                &nbsp; Payment Status
             </a>
         </td>
     </tr>

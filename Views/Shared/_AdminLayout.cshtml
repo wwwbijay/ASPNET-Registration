@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] </title>
+    <!-- Font special for pages-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="container">
+            @RenderBody()
+        </div>
+        <!--.container ends-->
+    }else{
+        <div class="container">
+            <div class="card content-card">
+                <div class="admin-content">
+                    @RenderBody()
+                    <!--.content-entry ends-->
+                </div>
+                <!--.content-row ends-->
+            </div>
+            <!--.card ends-->
+        </div>
+        <!--.container ends-->
+    }
+    
+
+    
+
+    <footer class="text-center footer text-muted">
+        <div class="container">
+            &copy; 2022 - EventRegistration
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

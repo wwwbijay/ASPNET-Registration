@@ -5,8 +5,12 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -15,18 +19,21 @@ namespace EventRegistration.Controllers
     public class AccountController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly MyPaySettings _mySettings;
+
         private readonly IApplicantService _applicants;
-        public AccountController(AppDbContext context, IApplicantService applicant_service)
+        public AccountController(AppDbContext context, IApplicantService applicant_service, IHttpClientFactory clientFactory, IOptions<MyPaySettings> settings)
         {
             _context = context;
             _applicants = applicant_service;
+            _clientFactory = clientFactory;
+            _mySettings = settings.Value;
         }
         [Authorize]
         public async Task<IActionResult> Index()
         {
             var applicantLists = await _applicants.GetAllAsync();
-            
-
             return View(applicantLists);
         }
         public IActionResult Login()
@@ -45,8 +52,8 @@ namespace EventRegistration.Controllers
                 //Creating the security context
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, "admin"),
-                    new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
+                    new Claim(ClaimTypes.Name, "Administrator"),
+                    new Claim(ClaimTypes.Email, "admin@mypay.com.np"),
                 };
                 var identity = new ClaimsIdentity(claims, "WpCookieMP");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
@@ -58,12 +65,6 @@ namespace EventRegistration.Controllers
             return View(credential);
         }
 
-        public void CheckPaymentStatus(string transactionalId)
-        {
-            var t =  transactionalId;
-            Console.WriteLine(t);
-           
-        }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("WpCookieMP");

@@ -32,10 +32,11 @@ namespace EventRegistration
                 options.Cookie.Name = "WpCookieMP";
                 options.LoginPath = "/Account/Login";
             });
+
             //DbContext configuration
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
+                options.UseMySQL(Configuration.GetConnectionString("DefaultConnectionString"));
             });
 
             services.AddScoped<IApplicantService, ApplicantService>();

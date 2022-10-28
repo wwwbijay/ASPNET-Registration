@@ -63,6 +63,7 @@ table{
 .material-symbols-outlined {
     position: relative;
     top: 5px;
+    font-size: 20px;
 }
 
 .content-card {
@@ -121,4 +122,9 @@ span.text-danger {
 
 @media only screen and (max-width: 750px) {
    
+}
+
+/* Admin Styles */
+.admin-content{
+    padding: 40px;
 }

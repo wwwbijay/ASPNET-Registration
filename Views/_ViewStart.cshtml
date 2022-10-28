@@ -1,3 +1,14 @@
 ﻿@{
-    Layout = "_Layout";
+    var routeUrl = ViewContext.RouteData.Values["Controller"].ToString();
+    var controllers = new List<string> { "Account" };
+
+    if (controllers.Any(routeUrl.Contains))
+    {
+        Layout = "_AdminLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+    
 }

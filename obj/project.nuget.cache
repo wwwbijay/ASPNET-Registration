@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CY1o5Bj3jjFq3PQMxfwzXsNkzikkpqEozYDdbbqiIIYrKnSqFU5fc5Gn4X/qnEJAvxKHi9LkmUOIJU0sdVy+lw==",
+  "dgSpecHash": "PIWyiSKP2mH3Fsi2AyoXEaJFwKXkDSWM6f45y19sfu06rIn/vPIzunbH7dNIyK4NgSpR2a5EwDUt97b85o6pCQ==",
   "success": true,
-  "projectFilePath": "C:\\dev\\aspNet\\ASPNET-Registration\\EventRegistration.csproj",
+  "projectFilePath": "D:\\AspNet\\EventRegistration\\EventRegistration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\entityframework\\6.0.0\\entityframework.6.0.0.nupkg.sha512",
