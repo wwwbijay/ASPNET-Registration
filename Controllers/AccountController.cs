@@ -65,6 +65,41 @@ namespace EventRegistration.Controllers
             return View(credential);
         }
 
+        public async Task<PartialViewResult> CheckPaymentStatus(string transaction_id)
+        {
+
+            //API request MyPay
+            var API_URL = _mySettings.BASE_URL + "/api/use-mypay-payments-status";
+            var API_KEY = _mySettings.API_KEY;
+
+            var testBody2 = JsonContent.Create(new
+            {
+                MerchantTransactionId = transaction_id,
+            });
+
+            var client = _clientFactory.CreateClient();
+
+            client.DefaultRequestHeaders.Add("API_KEY", API_KEY);
+
+            using var httpResponseMessage = await client.PostAsync(API_URL, testBody2);
+
+            var responseString = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            if (httpResponseMessage.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var responseObj = JsonConvert.DeserializeObject<PaymentStatusResponse>(responseString);
+                ViewBag.Message = responseObj.Remarks;
+                return PartialView("~/Views/Account/_CheckPaymentStatus.cshtml");
+            }
+            else
+            {
+                ViewBag.Message = "Sorry. Couldnot get data from server...";
+                return PartialView("~/Views/Account/_CheckPaymentStatus.cshtml");
+            }
+
+            
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("WpCookieMP");

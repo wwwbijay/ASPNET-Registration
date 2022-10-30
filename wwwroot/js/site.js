@@ -28,10 +28,26 @@ $(document).ready(function () {
     });
 
     $("#check_payment_status").click(function () {
-        $.ajax({
-            type: "GET",
-            url: "Account/CheckPaymentStatus",
-        });
+
+        let tid = $(this).data('assigned-id');
+        let requestUrl = 'Account/CheckPaymentStatus/?transaction_id='+ tid;
+     
+        console.log(requestUrl);
+        
+        $.get(requestUrl)
+            .done(function (responsedata) {
+                console.log("success");
+                $("#partialViewContent").html(responsedata);
+                $('#paymentStatusModal').modal('show')
+            })
+            .fail(function () {
+                $("#partialViewContent").html("Sorry. No Data available.");
+                $('#paymentStatusModal').modal('show')
+              
+            })
+            .always(function () {
+                // console.log("finished");
+            });
     });
     
 });

@@ -678,3 +678,4 @@ D:\AspNet\EventRegistration\obj\Debug\net5.0\EventRegistration.genruntimeconfig.
 D:\AspNet\EventRegistration\obj\Debug\net5.0\ref\EventRegistration.dll
 D:\AspNet\EventRegistration\bin\Debug\net5.0\appsettings.json
 D:\AspNet\EventRegistration\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\AspNet\EventRegistration\obj\Debug\net5.0\Razor\Views\Account\_CheckPaymentStatus.cshtml.g.cs
